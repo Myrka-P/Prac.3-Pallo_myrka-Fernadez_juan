@@ -4,10 +4,17 @@
  */
 package ec.edu.ups.Practica03.Vista;
 
+import java.util.Scanner;
+
 /**
  *
  * @author Juan Fernandez
  */
 public class VistaCantante {
+      private Scanner entrada;
+
+    public VistaCantante() {
+        entrada = new Scanner(System.in);
+    }
     
 }
