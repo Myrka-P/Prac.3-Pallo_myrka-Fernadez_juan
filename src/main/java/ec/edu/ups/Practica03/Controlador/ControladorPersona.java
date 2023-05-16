@@ -14,7 +14,7 @@ import java.util.List;
 
 /**
  *
- * @author USUARIO
+ * @author Juan Fernandez
  */
 public class ControladorPersona {
     private List<Persona> persona;//lista de la clase persona
