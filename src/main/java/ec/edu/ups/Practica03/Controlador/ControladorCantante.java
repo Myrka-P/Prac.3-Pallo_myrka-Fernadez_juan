@@ -19,27 +19,21 @@ import java.util.List;
 public class ControladorCantante {
     //objetos vist
     private VistaCantante vistaCantante;
-    private VistaCompositor vistaCompositor;
+   
     //objetos modelo
     private Cantante cantante;
-    private Compositor compositor;
+  
     //objetos DAO
     private ICantanteDAO cantanteDAO;
-    private ICompositorDAO compositorDAO;
+  
 
     //Constructor
 
-    public ControladorCantante(VistaCantante vistaCantante, VistaCompositor vistaCompositor, Cantante cantante, Compositor compositor, ICantanteDAO cantanteDAO, ICompositorDAO compositorDAO) {
+    public ControladorCantante(VistaCantante vistaCantante, Cantante cantante, ICantanteDAO cantanteDAO) {
         this.vistaCantante = vistaCantante;
-        this.vistaCompositor = vistaCompositor;
         this.cantante = cantante;
-        this.compositor = compositor;
         this.cantanteDAO = cantanteDAO;
-        this.compositorDAO = compositorDAO;
-    }
-
-   
-    
+    } 
     //llama al DAO para guardar un cantante
     public void registrar() {
         cantante = vistaCantante.ingresarCantante();
@@ -47,7 +41,8 @@ public class ControladorCantante {
     }
     
     //llama al DAO para obtener un cantante por el id y luego los muestra en la vista
-    public void verCliente() {
+
+    public void verCantante() {
         int id = vistaCantante.buscarCantante();
         cantante = cantanteDAO.read(id);
         vistaCantante.verCantante(cantante);
@@ -67,7 +62,7 @@ public class ControladorCantante {
     }
 
     //llama al DAO para obtener todos los cantantes  y luego los muestra en la vista
-    public void verClientes() {
+    public void verCantantes() {
         List<Cantante> cantantes;
         cantantes = cantanteDAO.findAll();
         vistaCantante.verCantantes(cantantes);
