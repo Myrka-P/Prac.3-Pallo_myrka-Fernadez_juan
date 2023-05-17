@@ -4,6 +4,8 @@
  */
 package ec.edu.ups.Practica03.Test;
 
+import ec.edu.ups.practica03.Modelo.Cantante;
+import ec.edu.ups.practica03.Modelo.Compositor;
 import java.util.Scanner;
 
 /**
@@ -224,5 +226,7 @@ public class Test {
         return compositor;
 
     }
+
+ 
 
 }

@@ -109,13 +109,15 @@ public class VistaCantante {
                 return cantante;
             }
         }
+        return null;
+       
     }
 
     public void verCantante(Cantante cantante) {
         System.out.println("Datos de cantante: " + cantante);
     }
 
-    public Cantante actualizarCantante(Object retorno) {
+    public void actualizarCantante(Object retorno) {
         if (retorno instanceof Cantante) {
 
             int codigo = ((Cantante) retorno).getCodigo();
@@ -143,6 +145,7 @@ public class VistaCantante {
             }
 
         }
+        return null;
     }
 
     public void verCantantes(List<Cantante> cantantes) {
