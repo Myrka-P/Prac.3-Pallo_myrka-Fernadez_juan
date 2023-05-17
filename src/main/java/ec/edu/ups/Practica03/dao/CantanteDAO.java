@@ -28,15 +28,7 @@ public class CantanteDAO implements ICantanteDAO  {
         listaCantante.add(cantante);
     }
 
-    @Override
-    public Cantante read(int id) {
-         for (Cantante cantante : listaCantante) {
-            if (cantante.getCodigo()== id) {
-                return cantante;
-            }
-        }
-        return null;
-    }
+    
 
     @Override
     public void update(Cantante cantante) {
@@ -64,6 +56,26 @@ public class CantanteDAO implements ICantanteDAO  {
     @Override
     public List<Cantante> findAll() {
         return listaCantante;
+    }
+
+    @Override
+    public Cantante read(Cantante nombre) {
+       for (Cantante cantante : listaCantante) {
+            if (cantante.getNombre()== nombre.getNombre()) {
+                return cantante;
+            } else {
+            }
+        }
+        return null; }
+
+    @Override
+    public Cantante read(String nombre) {
+        for (Cantante cantante : listaCantante) {
+            if (cantante.getNombre()== nombre) {
+                return cantante;
+            }
+        }
+        return null;
     }
     
 }

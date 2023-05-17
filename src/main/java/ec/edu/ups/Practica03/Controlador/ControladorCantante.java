@@ -5,11 +5,8 @@
 package ec.edu.ups.Practica03.Controlador;
 
 import ec.edu.ups.Practica03.Vista.VistaCantante;
-import ec.edu.ups.Practica03.Vista.VistaCompositor;
 import ec.edu.ups.Practica03.idao.ICantanteDAO;
-import ec.edu.ups.Practica03.idao.ICompositorDAO;
 import ec.edu.ups.practica03.Modelo.Cantante;
-import ec.edu.ups.practica03.Modelo.Compositor;
 import java.util.List;
 
 /**
@@ -25,6 +22,7 @@ public class ControladorCantante {
   
     //objetos DAO
     private ICantanteDAO cantanteDAO;
+    private String valor;
   
 
     //Constructor
@@ -43,21 +41,21 @@ public class ControladorCantante {
     //llama al DAO para obtener un cantante por el id y luego los muestra en la vista
 
     public void verCantante() {
-        int id = vistaCantante.buscarCantante();
-        cantante = cantanteDAO.read(id);
+        Cantante nombre = vistaCantante.buscarCantante(valor);
+        cantante = cantanteDAO.read(nombre);
         vistaCantante.verCantante(cantante);
     }
 
      //llama al DAO para actualizar un cantante
     public void actualizar() {
-        cantante = vistaCantante.actualizarCliente();
+        cantante = vistaCantante.actualizarCantante(this);
         cantanteDAO.update(cantante);
     }
     
     
     //llama al DAO para eliminar un cantante
     public void eliminar() {
-        cantante = vistaCantante.eliminarCliente();
+        cantante = vistaCantante.eliminarCantante(this);
         cantanteDAO.delete(cantante);
     }
 
@@ -67,6 +65,8 @@ public class ControladorCantante {
         cantantes = cantanteDAO.findAll();
         vistaCantante.verCantantes(cantantes);
     }
+
+   
     
     
     

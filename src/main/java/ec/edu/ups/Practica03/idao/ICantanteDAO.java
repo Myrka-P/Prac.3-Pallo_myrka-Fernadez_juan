@@ -14,8 +14,10 @@ import java.util.List;
 public interface ICantanteDAO {
     //Métodos CRUD
     public void create(Cantante cantante);
-    public Cantante read(int id);
+    public Cantante read(String nombre);
     public void update(Cantante cantante);
     public void delete(Cantante cantante);   
     public List<Cantante> findAll();
+
+    public Cantante read(Cantante nombre);
 }
